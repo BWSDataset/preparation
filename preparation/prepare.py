@@ -27,8 +27,8 @@ def custom_stemmer(word):
 def stem_words(tokens):
     return [custom_stemmer(word) for word in tokens]
 
-def preprocess_column(text):
-    text = punctuation_removal(text)
+def prepare(text):
+    # text = punctuation_removal(text)
     sentences = tokenize_sentences_bengali(text)
     tokenized_sentences = [tokenize_words_bengali(sentence) for sentence in sentences]
     cleaned_sentences = [remove_stopwords(tokens) for tokens in tokenized_sentences]
