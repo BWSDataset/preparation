@@ -6,7 +6,7 @@ def tokenize_sentences_bengali(text):
     sentences = re.split(pattern, text)
     sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
     return sentences
-
+    
 def tokenize_words_bengali(sentence):
     return sentence.split()
 
@@ -16,6 +16,7 @@ stopwords = set(stopwords_df['words'].tolist())
 
 def remove_stopwords(tokens):
     return [token for token in tokens if token not in stopwords]
+
 
 def custom_stemmer(word):
     suffixes = ['ের', 'কে', 'দের', 'র', 'তে', 'ও', 'ওয়া']  # Add more suffixes as needed
