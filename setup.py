@@ -1,12 +1,12 @@
-from setuptools import setup, find_packages
+from setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(
+setuptools.setup(
     name='preparation',
-    version='0.1',
-    packages=find_packages(),
+    version="0.1",
+    packages=['preparation'],
     install_requires=[
         "regex"
     ],
