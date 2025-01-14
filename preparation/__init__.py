@@ -1,1 +1,3 @@
-from .prepare import prepare
+__version__ = "0.1"
+
+from .prepare import *
