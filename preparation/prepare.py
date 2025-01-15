@@ -46,4 +46,6 @@ def prepare(text):
     tokenized_sentences = [tokenize_words_bengali(sentence) for sentence in sentences]
     cleaned_sentences = [remove_stopwords(tokens) for tokens in tokenized_sentences]
     stemmed_sentences = [stem_words(tokens) for tokens in cleaned_sentences]
-    return stemmed_sentences
+    sentence = " ".join(stemmed_sentences[0])
+    sentence
+    return sentence
