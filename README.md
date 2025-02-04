@@ -6,7 +6,7 @@ Hopefully, this tool will help your model for better natural language understand
 
 ## Installation
 ```bash
-$ pip install git+https://github.com/avisheak/preparation
+$ pip install git+https://github.com/avisheak/readiness
 ```
 
 ## Usage
