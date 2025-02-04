@@ -17,11 +17,12 @@ stopwords = set(stopwords_df['words'].tolist())
 def remove_stopwords(tokens):
     return [token for token in tokens if token not in stopwords]
 
-def unwanted_text_remove(text):
+def unwanted_text_remove(text, list):
     if not isinstance(text, str):
         return text  # Return as is if not a string
     
     unwanted_substrings = ["আরো পড়ুন", "বিস্তারিত", "আরো জানুন"]
+    lunwanted_substrings.extend(list)
     
     for substring in unwanted_substrings:
         text = text.replace(substring, "")
@@ -39,9 +40,10 @@ def custom_stemmer(word):
 def stem_words(tokens):
     return [custom_stemmer(word) for word in tokens]
 
-def prepare(text):
-    # text = punctuation_removal(text)
-    text = unwanted_text_remove(text)
+def prepare(
+    text, 
+    list=None):
+    text = unwanted_text_remove(text, list)
     sentences = tokenize_sentences_bengali(text)
     tokenized_sentences = [tokenize_words_bengali(sentence) for sentence in sentences]
     cleaned_sentences = [remove_stopwords(tokens) for tokens in tokenized_sentences]
