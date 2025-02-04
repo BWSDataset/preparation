@@ -1,6 +1,6 @@
 # Welcome everyone.
 
-This is a custom data preparation tool for Bangla text. It consists of sentence-level tokenization, stopword removal, and word-stemming steps. 
+This is a custom data preprocessing tool for Bangla text. It consists of sentence-level tokenization, stopword removal, unnecessary text removal, and word-stemming steps. 
 
 Hopefully, this tool will help your model for better natural language understanding. 
 
@@ -15,6 +15,7 @@ $ pip install git+https://github.com/avisheak/preparation
 from preparation import prepare
 input_text = """your input text"""
 prepared_text = prepare(
-    input_text       
+    input_text,
+    list=None # an optional list of strings which you want to remove from your text (default `None`)      
 )
 ```
