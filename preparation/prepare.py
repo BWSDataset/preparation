@@ -22,7 +22,7 @@ def unwanted_text_remove(text, list):
         return text  # Return as is if not a string
     
     unwanted_substrings = ["আরো পড়ুন", "বিস্তারিত", "আরো জানুন"]
-    lunwanted_substrings.extend(list)
+    unwanted_substrings.extend(list)
     
     for substring in unwanted_substrings:
         text = text.replace(substring, "")
