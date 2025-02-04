@@ -17,12 +17,18 @@ stopwords = set(stopwords_df['words'].tolist())
 def remove_stopwords(tokens):
     return [token for token in tokens if token not in stopwords]
 
+def merge_lists(list1, list2):
+    # Use the or operator to fall back to an empty list if the list is None
+    list1 = list1 or []
+    list2 = list2 or []
+    return list1 + list2 # Concatenate both lists
+
 def unwanted_text_remove(text, list):
     if not isinstance(text, str):
         return text  # Return as is if not a string
     
     unwanted_substrings = ["আরো পড়ুন", "বিস্তারিত", "আরো জানুন"]
-    unwanted_substrings = unwanted_substrings + list
+    unwanted_substrings = merge_lists(unwanted_substrings, list)
     
     for substring in unwanted_substrings:
         text = text.replace(substring, "")
